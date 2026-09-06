@@ -1,313 +1,378 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="color-scheme" content="light" />
-  <meta name="theme-color" content="#FBFBFA" />
-  <title>Privacy Policy — PolishPDF</title>
-  <meta name="description" content="Privacy Policy for PolishPDF, the professional PDF editor for Chrome, Gmail, and Zoho Mail." />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Privacy Policy for PolishPDF Chrome Extension." />
+  <title>PolishPDF Privacy Policy</title>
   <style>
-    :root{
-      --paper:#FBFBFA;
-      --surface:#F1F2F4;
-      --surface-2:#E9EBEE;
-      --ink:#1C1E21;
-      --muted:#63666D;
-      --border:#DDE0E4;
-      --accent:#2451B0;
-      --accent-strong:#1D438F;
-      --accent-soft:#E7EDFA;
-      --smart:#C8862A;
-      --smart-soft:#FAF2E5;
-      --success:#2E7D5B;
-      --danger:#C0432E;
-      --max:1120px;
+    :root {
+      --brand: #2f66f3;
+      --text: #1f2937;
+      --muted: #6b7280;
+      --bg: #f8fafc;
+      --card: #ffffff;
+      --border: #e5e7eb;
     }
-    *{box-sizing:border-box}
-    html{scroll-behavior:smooth}
-    body{
-      margin:0;background:var(--paper);color:var(--ink);
-      font-family:Inter,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
-      font-size:16px;line-height:1.65;-webkit-font-smoothing:antialiased;
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.65;
     }
-    a{color:var(--accent);text-decoration-thickness:1px;text-underline-offset:3px}
-    a:hover{color:var(--accent-strong)}
-    .topbar{
-      position:sticky;top:0;z-index:10;background:rgba(251,251,250,.94);
-      backdrop-filter:saturate(180%) blur(14px);border-bottom:1px solid var(--border);
+    .wrap {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 48px 20px 72px;
     }
-    .topbar-inner{max-width:var(--max);margin:auto;height:72px;padding:0 28px;display:flex;align-items:center;justify-content:space-between;gap:20px}
-    .brand{display:flex;align-items:center;gap:12px;min-width:0}
-    .brand-mark{width:38px;height:38px;border-radius:9px;background:#2d2f33;display:grid;place-items:center;overflow:hidden;border:1px solid #25272a}
-    .brand-mark img{width:38px;height:38px;object-fit:cover}
-    .brand-copy{display:flex;flex-direction:column;line-height:1.1}
-    .brand-name{font-weight:750;font-size:17px;letter-spacing:-.02em}
-    .brand-sub{font-size:12px;color:var(--muted);margin-top:4px}
-    .policy-pill{font-size:12px;font-weight:650;color:var(--accent);background:var(--accent-soft);border:1px solid #cbd7f3;border-radius:999px;padding:7px 10px;white-space:nowrap}
-
-    .hero{max-width:var(--max);margin:0 auto;padding:76px 28px 30px;display:grid;grid-template-columns:minmax(0,1.35fr) minmax(280px,.65fr);gap:52px;align-items:end}
-    .eyebrow{display:flex;align-items:center;gap:8px;color:var(--smart);font-size:13px;font-weight:700;letter-spacing:.02em;text-transform:uppercase;margin-bottom:14px}
-    .eyebrow-dot{width:8px;height:8px;border-radius:2px;background:var(--smart);transform:rotate(45deg)}
-    h1{margin:0;font-size:clamp(44px,6vw,76px);line-height:.98;letter-spacing:-.055em;font-weight:780;max-width:790px}
-    .hero-lede{margin:25px 0 0;max-width:760px;font-size:19px;line-height:1.55;color:var(--muted)}
-    .hero-meta{border-left:3px solid var(--accent);padding:2px 0 2px 18px;align-self:end}
-    .meta-label{font-size:12px;font-weight:700;color:var(--muted);text-transform:uppercase;letter-spacing:.06em}
-    .meta-value{margin-top:5px;font-size:15px;font-weight:620}
-    .meta-value + .meta-label{margin-top:20px}
-
-    .trust-grid{max-width:var(--max);margin:0 auto;padding:34px 28px 64px;display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
-    .trust-card{border:1px solid var(--border);background:white;border-radius:12px;padding:20px 20px 18px;min-height:138px}
-    .trust-icon{width:30px;height:30px;border-radius:8px;display:grid;place-items:center;background:var(--accent-soft);color:var(--accent);font-weight:800;font-size:14px;margin-bottom:16px}
-    .trust-card.smart .trust-icon{background:var(--smart-soft);color:var(--smart)}
-    .trust-card.success .trust-icon{background:#eaf4ef;color:var(--success)}
-    .trust-title{font-weight:720;font-size:15px;margin-bottom:5px}
-    .trust-text{font-size:13px;line-height:1.5;color:var(--muted)}
-
-    .layout{max-width:var(--max);margin:0 auto;padding:0 28px 92px;display:grid;grid-template-columns:250px minmax(0,1fr);gap:58px;align-items:start}
-    .toc{position:sticky;top:104px;border-top:1px solid var(--border);padding-top:16px}
-    .toc-title{font-size:11px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin-bottom:10px}
-    .toc a{display:block;text-decoration:none;color:var(--muted);font-size:13px;padding:6px 0}
-    .toc a:hover{color:var(--accent)}
-    .content{min-width:0}
-    section{padding:0 0 42px;margin:0 0 42px;border-bottom:1px solid var(--border)}
-    section:last-of-type{border-bottom:0;margin-bottom:0}
-    h2{font-size:26px;line-height:1.2;letter-spacing:-.03em;margin:0 0 16px;font-weight:760}
-    h3{font-size:16px;line-height:1.3;margin:28px 0 8px;font-weight:730}
-    p{margin:0 0 14px;color:#34373c}
-    ul{padding-left:22px;margin:12px 0 0}
-    li{margin:8px 0;color:#34373c}
-    strong{font-weight:720}
-    .callout{background:var(--accent-soft);border:1px solid #cbd7f3;border-left:4px solid var(--accent);border-radius:8px;padding:18px 20px;margin:18px 0;color:#243b6b}
-    .callout.smart{background:var(--smart-soft);border-color:#ead4b5;border-left-color:var(--smart);color:#6e4b19}
-    .data-table{border:1px solid var(--border);border-radius:10px;overflow:hidden;margin-top:18px;background:white}
-    .data-row{display:grid;grid-template-columns:180px 1fr;gap:20px;padding:16px 18px;border-bottom:1px solid var(--border)}
-    .data-row:last-child{border-bottom:0}
-    .data-key{font-size:13px;font-weight:720;color:var(--ink)}
-    .data-val{font-size:14px;color:var(--muted)}
-    .limited-use{background:#202328;color:#fff;border-radius:14px;padding:28px 30px;margin:8px 0 0;position:relative;overflow:hidden}
-    .limited-use:after{content:"";position:absolute;width:180px;height:180px;border-radius:50%;right:-85px;top:-90px;background:rgba(200,134,42,.13)}
-    .limited-use h2{color:#fff}
-    .limited-use p,.limited-use li{color:#d7d9dd}
-    .limited-use strong{color:#fff}
-    .limited-badge{display:inline-flex;align-items:center;gap:8px;background:rgba(36,81,176,.28);border:1px solid rgba(126,157,226,.45);border-radius:999px;padding:6px 10px;font-size:11px;font-weight:750;letter-spacing:.06em;text-transform:uppercase;color:#dfe8ff;margin-bottom:16px}
-    .limited-badge span{width:6px;height:6px;border-radius:50%;background:#8fb0ff}
-
-    footer{border-top:1px solid var(--border);background:#f6f6f4}
-    .footer-inner{max-width:var(--max);margin:auto;padding:30px 28px 46px;display:flex;justify-content:space-between;gap:30px;align-items:flex-start}
-    .footer-brand{font-size:14px;font-weight:730}
-    .footer-copy{font-size:12px;color:var(--muted);margin-top:4px}
-    .footer-right{font-size:12px;color:var(--muted);text-align:right;max-width:460px}
-
-    @media(max-width:850px){
-      .hero{grid-template-columns:1fr;gap:30px;padding-top:52px}
-      .trust-grid{grid-template-columns:1fr}
-      .layout{grid-template-columns:1fr;gap:26px}
-      .toc{position:relative;top:auto;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:0 20px}
-      .toc-title{grid-column:1/-1}
-      .footer-inner{flex-direction:column}
-      .footer-right{text-align:left}
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 28px;
+      font-weight: 700;
+      font-size: 22px;
+      color: var(--brand);
     }
-    @media(max-width:560px){
-      .topbar-inner,.hero,.trust-grid,.layout,.footer-inner{padding-left:18px;padding-right:18px}
-      .policy-pill{display:none}
-      h1{font-size:46px}
-      .hero-lede{font-size:17px}
-      .data-row{grid-template-columns:1fr;gap:4px}
-      .toc{grid-template-columns:1fr}
+    .logo {
+      width: 38px;
+      height: 38px;
+      border-radius: 10px;
+      background: var(--brand);
+      color: white;
+      display: grid;
+      place-items: center;
+      font-weight: 700;
+      font-size: 18px;
     }
-    @media print{
-      .topbar,.toc{display:none}
-      body{background:#fff}
-      .hero,.trust-grid,.layout{max-width:none;padding-left:0;padding-right:0}
-      .layout{display:block}
-      section{break-inside:avoid}
+    .card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 42px;
+      box-shadow: 0 8px 30px rgba(15, 23, 42, 0.05);
+    }
+    h1 {
+      margin: 0 0 8px;
+      font-size: 36px;
+      line-height: 1.2;
+    }
+    h2 {
+      margin-top: 34px;
+      font-size: 22px;
+      line-height: 1.3;
+    }
+    h3 {
+      margin-top: 24px;
+      font-size: 17px;
+    }
+    p, li { font-size: 16px; }
+    .meta {
+      color: var(--muted);
+      margin-bottom: 24px;
+    }
+    .lead {
+      font-size: 19px;
+      font-weight: 600;
+      color: #111827;
+    }
+    ul { padding-left: 24px; }
+    .footer {
+      margin-top: 38px;
+      padding-top: 24px;
+      border-top: 1px solid var(--border);
+      color: var(--muted);
+      font-size: 14px;
+    }
+    @media (max-width: 640px) {
+      .wrap { padding: 24px 14px 48px; }
+      .card { padding: 26px 20px; }
+      h1 { font-size: 30px; }
     }
   </style>
 </head>
 <body>
-  <header class="topbar">
-    <div class="topbar-inner">
-      <div class="brand">
-        <div class="brand-mark"><img alt="PolishPDF logo" src="data:image/png;base64,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KQDXcXXF5Zdq2NChuuba61VZWalwOCTP4wmBfOjbnrezs1Oe52mDDTbQAfvvp7FjD9Lmm38z99pieoQvO/k/8+y/NX1as/7xz3/pk08+UUVFhWKxmIwx7O1jjRAAgC+QfVa/qalJ99zzf/rww4904w3Xa/DgwXl/QsDzPB1//M80dNhQnXPO+erq6qZ98BpaVXve7Gp/3333UV1traSVG+YUspK/b1HhkiVLNGfOw5rePEMvv/yKkslkrpJ/NVf7wBfilm8wsQWwmkKhkJYtW6bhwzfQ1Ck3aMSILfqtffBLL72sU049XYsWLVJdXR3Fgavhvw7j6U1p/fXX07777q1xY8do2223yb22mFb7WS+++JKmT5+hhx95VB9++KHC4bCi0Wjuc8rT1hBbAJDEgB9UBICvIRQKKR6PKxqN6tprrta+++7db+2DP/posU499XT9+7nnaB/8Fay02k8kFKmIaJttvqWxYw/S/vvtq0GDBkkqzva8y5Yt1yOPPKpp05s1b96L6upKHx1cUVHRX6t9AgAkMeAHFQHga8o+c51MJnXeuefoxz8+JrNVIDlOfkNAV1eXzjnnfN03bboaGxtpH/w5qzqMZ5111tFee+2p8ePGaIcdvpN7bTGu9l999bVce94PPvhArhtSLJb31f6qEAAgiRoAYLVk2weHQiFdcullamlp0YUXnpcbtPPZPriqqko33jhJQ4cN1U033ayaGtoHSysfxtPe3q5wOKytttpSYw46UAeM3F/rrL127rXF0Z53xd5+PB7XP/75L91333T9+9/PqbOzU9FoVPX19TTswYAjAACrqW/74D/88U9qWbRI11/3K9XV1eW9ONBaq4lnTNCwYUN18UWXysqqsrIycJNE39V+V1eXunt6NHittTTygP01fvxY7bLLzrlb6n1X+4WY+FdVyf/WW2+recZMPfDAHC1cuFDGOIrFoiu15wUGGrd8g4ktgDwJhUJqa2vTiBFb6KapN2j48OF5LQ7s+zz4008/o9MmTNSSJa2qra0JRF1A3/a88XhcjuNoiy0214EHjtaBo0dq/fXXz722kA170t8nK2OUW+13dXfrscce1333TdfTTz+j5cvbFY1WqbKystCV/GwBQBIDflARAPIoFAqpo6NDTU1NmjzpOu2yy079Vhz47rvv6eSTT9OCV18t6/bB6QBl1dWVPoyn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" /></div>
-        <div class="brand-copy">
-          <div class="brand-name">PolishPDF</div>
-          <div class="brand-sub">Professional PDF Editor</div>
-        </div>
-      </div>
-      <div class="policy-pill">Privacy Policy</div>
-    </div>
-  </header>
-
-  <main>
-    <div class="hero">
-      <div>
-        <div class="eyebrow"><span class="eyebrow-dot"></span> Privacy, by design</div>
-        <h1>Your documents stay yours.</h1>
-        <p class="hero-lede">PolishPDF is built to edit PDFs inside your existing Chrome, Gmail, and Zoho Mail workflow while minimizing access to user data and keeping document processing local wherever possible.</p>
-      </div>
-      <div class="hero-meta">
-        <div class="meta-label">Effective date</div>
-        <div class="meta-value">August 19, 2026</div>
-        <div class="meta-label">Applies to</div>
-        <div class="meta-value">PolishPDF Chrome extension</div>
-      </div>
+  <main class="wrap">
+    <div class="brand">
+      <div class="logo">P</div>
+      PolishPDF
     </div>
 
-    <div class="trust-grid">
-      <div class="trust-card">
-        <div class="trust-icon">01</div>
-        <div class="trust-title">Local-first document processing</div>
-        <div class="trust-text">PDF editing is performed in the browser. PolishPDF does not operate a server-side document-storage service in the current release.</div>
+    <article class="card">
+      <h1>Privacy Policy</h1>
+      <div class="meta">
+        Effective date: September 6, 2026<br>
+        Applies to: PolishPDF Chrome Extension — Build 2.0
       </div>
-      <div class="trust-card smart">
-        <div class="trust-icon">02</div>
-        <div class="trust-title">No advertising or data sales</div>
-        <div class="trust-text">We do not sell user data, build advertising profiles, or use document or email content for personalized advertising.</div>
+
+      <p class="lead">Your documents stay yours.</p>
+
+      <p>
+        PolishPDF is designed to let users edit PDF documents directly inside Chrome and from
+        PDF attachments in Gmail while minimizing access to user data.
+      </p>
+
+      <p>
+        PDF processing is performed locally in the user's browser. PolishPDF does not operate a
+        server that uploads, stores, or processes users' PDF documents.
+      </p>
+
+      <h2>1. Overview</h2>
+      <p>
+        PolishPDF is a Chrome extension that allows users to open, edit, annotate, sign, highlight,
+        whiteout, reorder, manage, save, and download PDF documents.
+      </p>
+      <p>
+        PolishPDF also integrates with Gmail so that a user can select a PDF attachment in a Gmail
+        compose window, open that PDF in PolishPDF, edit it, and return the edited PDF to the same
+        Gmail compose workflow.
+      </p>
+      <p>
+        PolishPDF does not require users to create a PolishPDF account.
+      </p>
+      <p>
+        PolishPDF does not maintain a cloud database containing users' PDF files, document contents,
+        email contents, or document edits.
+      </p>
+
+      <h2>2. Data handled by PolishPDF</h2>
+
+      <h3>PDF and document content</h3>
+      <p>PolishPDF may process the following information locally on the user's device:</p>
+      <ul>
+        <li>PDF files that the user chooses to open</li>
+        <li>Text contained within those PDFs</li>
+        <li>Images contained within those PDFs</li>
+        <li>Annotations</li>
+        <li>Signatures added by the user</li>
+        <li>Highlights</li>
+        <li>Whiteouts</li>
+        <li>Page order</li>
+        <li>Shapes and markings</li>
+        <li>Other edits made by the user</li>
+      </ul>
+      <p>
+        This information is processed only for the purpose of providing the PDF editing functionality
+        requested by the user. PolishPDF does not upload this document content to a PolishPDF-operated server.
+      </p>
+
+      <h3>Gmail page content</h3>
+      <p>
+        When PolishPDF is used with Gmail, the extension may access limited elements of the Gmail
+        compose interface that are necessary to:
+      </p>
+      <ul>
+        <li>detect a PDF attachment;</li>
+        <li>display the PolishPDF editing option;</li>
+        <li>open the PDF selected by the user; and</li>
+        <li>return the edited PDF to the Gmail compose workflow.</li>
+      </ul>
+      <p>
+        PolishPDF does not use Gmail access to read users' inboxes, monitor email activity, build profiles,
+        or collect unrelated email content.
+      </p>
+
+      <h3>Extension settings and local state</h3>
+      <p>
+        PolishPDF may store limited extension settings, preferences, and temporary editor state using
+        Chrome's local extension storage. This information is used only to provide and maintain PolishPDF functionality.
+      </p>
+
+      <h2>3. Information PolishPDF does not collect</h2>
+      <p>PolishPDF does not intentionally collect:</p>
+      <ul>
+        <li>passwords;</li>
+        <li>authentication credentials;</li>
+        <li>authentication cookies;</li>
+        <li>payment card information;</li>
+        <li>financial account information;</li>
+        <li>health information;</li>
+        <li>precise location;</li>
+        <li>browsing history for unrelated websites;</li>
+        <li>advertising identifiers; or</li>
+        <li>information for behavioral advertising.</li>
+      </ul>
+      <p>PolishPDF does not sell user data or build advertising profiles.</p>
+
+      <h2>4. Gmail access</h2>
+      <p>
+        PolishPDF requests access to Gmail only where required to provide its user-facing PDF attachment
+        editing workflow.
+      </p>
+      <p>
+        This access allows PolishPDF to detect a PDF attachment selected by the user, open that document
+        in the PolishPDF editor, and return the edited PDF to the Gmail compose workflow.
+      </p>
+      <p>PolishPDF is not designed to:</p>
+      <ul>
+        <li>read a user's inbox for unrelated purposes;</li>
+        <li>collect email conversations;</li>
+        <li>monitor who the user communicates with;</li>
+        <li>create profiles based on email activity; or</li>
+        <li>monitor general browsing behavior.</li>
+      </ul>
+
+      <h2>5. Chrome PDF access</h2>
+      <p>
+        When a user opens a supported PDF through Chrome, PolishPDF may access the PDF resource necessary
+        to display and edit that document.
+      </p>
+      <p>
+        This access is used only to provide the PDF editing functionality requested by the user.
+        PolishPDF does not use this access to collect or create a history of websites visited by the user.
+      </p>
+
+      <h2>6. Local PDF processing</h2>
+      <p>
+        PDF rendering and editing take place on the user's device.
+      </p>
+      <p>
+        The current version of PolishPDF does not upload users' PDF document contents to a
+        PolishPDF-operated backend for document processing or storage.
+      </p>
+      <p>
+        When a user downloads or saves an edited PDF, the resulting file is saved to the location selected
+        or controlled by the user.
+      </p>
+      <p>
+        When a user returns an edited PDF to Gmail, the resulting document is provided back to the Gmail
+        workflow requested by the user and is then subject to Google's applicable terms and privacy practices.
+      </p>
+
+      <h2>7. Downloads</h2>
+      <p>
+        PolishPDF uses Chrome's download functionality when a user explicitly chooses to download or export
+        an edited PDF. PolishPDF does not automatically download files without a user action.
+      </p>
+
+      <h2>8. Local storage</h2>
+      <p>PolishPDF may use Chrome extension storage to maintain:</p>
+      <ul>
+        <li>extension settings;</li>
+        <li>user preferences;</li>
+        <li>editor preferences; and</li>
+        <li>local state necessary for the extension to function.</li>
+      </ul>
+      <p>This information is not used for advertising or user profiling.</p>
+
+      <h2>9. PDF.js and third-party open-source code</h2>
+      <p>
+        PolishPDF uses Mozilla PDF.js 3.11.174 for PDF rendering.
+      </p>
+      <p>
+        In the current Build 2.0 configuration, PDF.js may be loaded from
+        <strong>cdnjs.cloudflare.com</strong> within a sandboxed editor page.
+      </p>
+      <p>
+        This network request downloads the PDF.js library code required for PDF rendering. PolishPDF does
+        not intentionally transmit the contents of the PDF being edited to cdnjs as part of this request.
+      </p>
+      <p>
+        Like normal internet requests, the third-party CDN provider may receive standard technical connection
+        information such as an IP address and browser-related request information according to its own privacy practices.
+      </p>
+      <p>The sandboxed editor page does not have privileged access to Chrome extension APIs.</p>
+
+      <h2>10. Data retention</h2>
+      <p>
+        PolishPDF does not operate a server-side database that stores users' PDF documents, Gmail content,
+        or document edits.
+      </p>
+      <p>
+        Document information may temporarily exist in browser memory while the PDF editing session is active.
+        Extension settings or preferences may remain in Chrome's local extension storage until they are changed,
+        cleared, or the extension is removed.
+      </p>
+
+      <h2>11. Data sharing and sale</h2>
+      <p>PolishPDF does not:</p>
+      <ul>
+        <li>sell user data;</li>
+        <li>transfer user data to data brokers;</li>
+        <li>transfer user data for personalized advertising;</li>
+        <li>use user data to determine creditworthiness; or</li>
+        <li>use user data for lending purposes.</li>
+      </ul>
+
+      <h2>12. Advertising and analytics</h2>
+      <p>
+        PolishPDF does not use document contents or Gmail contents for advertising.
+      </p>
+      <p>
+        The current release does not use advertising SDKs to build user profiles.
+        PolishPDF does not use users' PDF contents to train a PolishPDF-owned artificial intelligence model.
+      </p>
+
+      <h2>13. Security</h2>
+      <p>
+        PolishPDF uses Chrome Manifest V3 and is designed to minimize the permissions and data access required
+        to provide its PDF editing functionality.
+      </p>
+      <p>
+        PDF document processing is designed to remain on the user's device rather than requiring documents
+        to be uploaded to a PolishPDF-operated document-processing server.
+      </p>
+      <p>
+        The PDF editor uses a sandboxed environment to separate relevant editor functionality from privileged
+        Chrome extension APIs.
+      </p>
+
+      <h2>14. User choices and controls</h2>
+      <p>Users control which PDFs PolishPDF opens and edits. Users may:</p>
+      <ul>
+        <li>choose which PDF to edit;</li>
+        <li>close the editor without saving;</li>
+        <li>choose whether to download an edited PDF;</li>
+        <li>choose whether to return an edited PDF to Gmail;</li>
+        <li>manage PolishPDF's site permissions through Chrome;</li>
+        <li>clear extension data through Chrome; and</li>
+        <li>uninstall PolishPDF at any time.</li>
+      </ul>
+
+      <h2>15. Chrome Web Store Limited Use disclosure</h2>
+      <p>
+        PolishPDF's use of information received from Chrome and supported websites complies with the
+        Chrome Web Store User Data Policy, including applicable Limited Use requirements.
+      </p>
+      <p>
+        User data is used only to provide or improve PolishPDF's disclosed, user-facing PDF editing functionality.
+      </p>
+      <p>
+        PolishPDF does not use or transfer user data for personalized, retargeted, or interest-based advertising.
+        PolishPDF does not sell user data.
+      </p>
+      <p>
+        PolishPDF does not permit routine human access to users' private PDF documents or communications.
+      </p>
+
+      <h2>16. Children's privacy</h2>
+      <p>
+        PolishPDF is a general productivity application and is not specifically directed toward children.
+        PolishPDF does not knowingly create advertising profiles of children or intentionally collect children's
+        information for advertising purposes.
+      </p>
+
+      <h2>17. Changes to this Privacy Policy</h2>
+      <p>
+        This Privacy Policy may be updated when PolishPDF's functionality, permissions, data practices,
+        or applicable requirements change. When a material change is made, the effective date at the top
+        of this policy will be updated.
+      </p>
+
+      <h2>18. Contact</h2>
+      <p>
+        For privacy questions, data-handling questions, or support relating to PolishPDF, users may contact
+        the publisher through the support information provided on the PolishPDF Chrome Web Store listing.
+      </p>
+
+      <div class="footer">
+        <strong>PolishPDF</strong><br>
+        Professional PDF Editor<br><br>
+        Privacy Policy · Effective September 6, 2026
       </div>
-      <div class="trust-card success">
-        <div class="trust-icon">03</div>
-        <div class="trust-title">Purpose-limited access</div>
-        <div class="trust-text">Gmail and Zoho Mail access is used only to support the PDF attachment editing workflow described in PolishPDF.</div>
-      </div>
-    </div>
-
-    <div class="layout">
-      <nav class="toc" aria-label="Privacy policy sections">
-        <div class="toc-title">Contents</div>
-        <a href="#overview">1. Overview</a>
-        <a href="#data">2. Data we handle</a>
-        <a href="#use">3. How we use data</a>
-        <a href="#permissions">4. Gmail & Zoho access</a>
-        <a href="#processing">5. Local processing</a>
-        <a href="#third-parties">6. Third-party code</a>
-        <a href="#retention">7. Storage & retention</a>
-        <a href="#security">8. Security</a>
-        <a href="#choices">9. Your choices</a>
-        <a href="#limited-use">10. Limited Use</a>
-        <a href="#changes">11. Changes</a>
-        <a href="#contact">12. Contact</a>
-      </nav>
-
-      <article class="content">
-        <section id="overview">
-          <h2>1. Overview</h2>
-          <p>This Privacy Policy explains how <strong>PolishPDF</strong> handles information when you use the PolishPDF Chrome extension. PolishPDF's single purpose is to let users open, edit, annotate, reorder, download, and return PDF documents within supported Chrome, Gmail, and Zoho Mail workflows.</p>
-          <p>Google's Chrome Web Store policies treat locally processed information as user data handling as well. For that reason, this policy describes both information processed on your device and any network activity associated with the extension.</p>
-          <div class="callout"><strong>Current product model:</strong> PolishPDF does not require a PolishPDF account and does not maintain a PolishPDF-operated cloud database containing your PDF files, email contents, or document edits.</div>
-        </section>
-
-        <section id="data">
-          <h2>2. Data we handle</h2>
-          <p>PolishPDF may handle the following categories only when needed for the user-facing PDF editing features you choose to use:</p>
-          <div class="data-table">
-            <div class="data-row"><div class="data-key">User-generated content</div><div class="data-val">PDF files you choose to open, text and annotations inside those PDFs, page order, and edits you make.</div></div>
-            <div class="data-row"><div class="data-key">Personal communications</div><div class="data-val">A user-selected PDF attachment and limited compose-window context necessary to open or return that attachment in Gmail or Zoho Mail.</div></div>
-            <div class="data-row"><div class="data-key">Website content</div><div class="data-val">Limited page structure and attachment-related elements on supported Gmail and Zoho Mail pages that PolishPDF needs to detect the user-facing compose/attachment workflow.</div></div>
-            <div class="data-row"><div class="data-key">Technical data</div><div class="data-val">Normal browser/network metadata may be generated when Chrome loads resources needed by the extension. PolishPDF does not use analytics or advertising SDKs in the current release.</div></div>
-          </div>
-          <h3>Information we do not intentionally request</h3>
-          <p>PolishPDF does not request your passwords, authentication cookies, precise location, health information, credit information, or browsing history for unrelated sites.</p>
-        </section>
-
-        <section id="use">
-          <h2>3. How we use data</h2>
-          <p>Information handled by PolishPDF is used only to provide or improve the extension's disclosed PDF editing workflow. This includes:</p>
-          <ul>
-            <li>opening and rendering a PDF you select;</li>
-            <li>detecting editable text regions and applying edits or annotations;</li>
-            <li>reordering or deleting pages at your direction;</li>
-            <li>creating the edited PDF output;</li>
-            <li>returning or attaching that edited PDF to the Gmail or Zoho Mail compose workflow you initiated; and</li>
-            <li>diagnosing extension breakage locally through browser console messages.</li>
-          </ul>
-          <p>PolishPDF does <strong>not</strong> use your PDFs, email content, or attachment content to build advertising profiles, sell data, or train a PolishPDF-owned AI model.</p>
-        </section>
-
-        <section id="permissions">
-          <h2>4. Gmail and Zoho Mail access</h2>
-          <p>PolishPDF requests host access to <strong>mail.google.com</strong> and supported regional <strong>Zoho Mail</strong> domains. This access exists so the extension can detect PDF attachments in supported compose workflows, open the PDF editor when you request it, and return the edited PDF to the same workflow.</p>
-          <div class="callout smart"><strong>Scope:</strong> PolishPDF is not designed to read your inbox for unrelated purposes, profile your email activity, or monitor general web browsing. Supported site access is limited to the extension's PDF editing purpose.</div>
-        </section>
-
-        <section id="processing">
-          <h2>5. Local processing and document transfer</h2>
-          <p>PDF rendering and editing take place inside the Chrome extension environment on your device. The current release does not upload your document contents to a PolishPDF-operated backend for storage or processing.</p>
-          <p>When you explicitly download, save, or return an edited PDF to Gmail or Zoho Mail, the resulting document is handled by the destination you selected and becomes subject to that service's own privacy terms.</p>
-          <p>Chrome PDF mode may access the PDF resource that Chrome itself is opening so PolishPDF can render it for editing. PolishPDF does not use that access to create an unrelated browsing-history service.</p>
-        </section>
-
-        <section id="third-parties">
-          <h2>6. Third-party open-source code</h2>
-          <p>The current PolishPDF release uses open-source PDF rendering technology. In version 0.5.25, Mozilla PDF.js 3.11.174 is loaded from <strong>cdnjs.cloudflare.com</strong> inside a Chrome sandboxed editor page.</p>
-          <p>This network request is used to download the library code. PolishPDF does not intentionally transmit your PDF contents, email contents, or attachments to the CDN as part of that request. Like standard web requests generally, the CDN may receive ordinary connection metadata such as an IP address and browser user-agent information under its own terms.</p>
-          <p>Future releases may bundle these dependencies locally. If the extension's data practices materially change, this policy will be updated before or alongside that change.</p>
-        </section>
-
-        <section id="retention">
-          <h2>7. Storage and retention</h2>
-          <p>Because the current PolishPDF release does not operate a server-side document database, PolishPDF does not retain copies of your PDFs, email contents, or edits on PolishPDF-operated servers.</p>
-          <p>Document data may remain temporarily in browser memory while an editing session is active. Files that you download, save, or attach are retained wherever you choose to store or send them. Browser console diagnostics may remain available locally until Chrome clears them or the relevant browser session ends.</p>
-        </section>
-
-        <section id="security">
-          <h2>8. Security</h2>
-          <p>PolishPDF uses Chrome Manifest V3 and limits extension host access to the supported Gmail and Zoho Mail domains required for its user-facing PDF workflow. The PDF editor is configured as a sandboxed extension page, which separates it from privileged Chrome extension APIs.</p>
-          <p>No software can guarantee absolute security. We design PolishPDF to minimize access and avoid unnecessary server-side document handling, reducing the amount of user data exposed outside the browser.</p>
-        </section>
-
-        <section id="choices">
-          <h2>9. Your choices and controls</h2>
-          <ul>
-            <li>You decide which PDF to open and edit.</li>
-            <li>You can close PolishPDF without exporting an edited copy.</li>
-            <li>You control whether an edited document is downloaded or returned to an email workflow.</li>
-            <li>You can manage PolishPDF's site access through Chrome's extension settings.</li>
-            <li>You can uninstall PolishPDF at any time through Chrome.</li>
-          </ul>
-        </section>
-
-        <section id="limited-use">
-          <div class="limited-use">
-            <div class="limited-badge"><span></span> Chrome Web Store Limited Use</div>
-            <h2>10. Limited Use disclosure</h2>
-            <p>PolishPDF's use of information received from supported websites and Chrome complies with the <strong>Chrome Web Store User Data Policy, including the Limited Use requirements.</strong></p>
-            <ul>
-              <li><strong>Allowed use:</strong> user data is used only to provide or improve PolishPDF's single purpose and user-facing PDF editing features.</li>
-              <li><strong>Allowed transfer:</strong> PolishPDF does not transfer user data except where necessary to provide the feature the user requested, comply with applicable law, address security or abuse, or as otherwise permitted by the Chrome Web Store User Data Policy.</li>
-              <li><strong>No personalized advertising:</strong> user data is not used or transferred for personalized, retargeted, or interest-based advertising.</li>
-              <li><strong>No routine human access:</strong> PolishPDF does not permit humans to read private user documents or communications, except where the user affirmatively provides specific content for support, where required for security, where required by law, or where otherwise permitted by applicable policy.</li>
-            </ul>
-          </div>
-        </section>
-
-        <section id="children">
-          <h2>Children's privacy</h2>
-          <p>PolishPDF is a general productivity tool and is not directed specifically to children. The extension does not knowingly create profiles of children or intentionally collect children's information for advertising.</p>
-        </section>
-
-        <section id="changes">
-          <h2>11. Changes to this policy</h2>
-          <p>We may update this Privacy Policy when PolishPDF's functionality, permissions, data practices, or legal obligations change. The effective date at the top of this page will be updated when a revised policy is published.</p>
-        </section>
-
-        <section id="contact">
-          <h2>12. Contact</h2>
-          <p>For privacy questions, data-handling questions, or support related to PolishPDF, contact the publisher through the <strong>support channel on the PolishPDF Chrome Web Store listing</strong>.</p>
-          <p>If you voluntarily send a document or message for technical support, we will use that material only to address the support request and will not use it for advertising.</p>
-        </section>
-      </article>
-    </div>
+    </article>
   </main>
-
-  <footer>
-    <div class="footer-inner">
-      <div>
-        <div class="footer-brand">PolishPDF</div>
-        <div class="footer-copy">Professional PDF Editor</div>
-      </div>
-      <div class="footer-right">Privacy Policy · Effective August 19, 2026<br/>Designed around data minimization, local-first processing, and purpose-limited access.</div>
-    </div>
-  </footer>
 </body>
 </html>
